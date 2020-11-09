@@ -90,24 +90,12 @@ swagger:
   # 是否开启swagger
   enabled: true
 
-oss:
-  bucket: jhtcfl
-  endpoint: oss-cn-beijing.aliyuncs.com
-  accessKey: LTAI4G49efKVhJELCEchaAyX
-  secretKey: V7Ea4cNIhARdvfOeiJxIwpbguUMSJp
-  host: https://${oss.bucket}.${oss.endpoint}
-
-article:
-  h5: https://m.qufaw.com/#/pages/index/lawList/lawList
-  pc: https://www.qufaw.com/law_details
-
-
 # 项目相关配置
 fun:
   # 名称
-  name: jhtc
+  name: FUN-BOOT
   # 版本
-  version: 1.0.0
+  version: 4.5.0
   # 版权年份
   copyrightYear: 2020
   # 实例演示开关
