@@ -1,32 +1,32 @@
-# 项目相关配置
-fun:
-  # 名称
-  name: FUN-BOOT
-  # 版本
-  version: 4.5.0
-  # 版权年份
-  copyrightYear: 2020
-  # 实例演示开关
-  demoEnabled: true
-  # 文件路径 示例（ Windows配置D:/fun/uploadPath，Linux配置 /home/fun/uploadPath）
-  profile: /home/fun/uploadPath
-  # 获取ip地址开关
-  addressEnabled: false
-
 # 开发环境配置
 server:
-  # 服务器的HTTP端口，默认为80
-  port: 80
+  port: 8886
+
+# Spring配置
+spring:
+  profiles:
+    active: dev
+  # 资源信息
+  messages:
+    # 国际化资源文件路径
+    basename: static/i18n/messages
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  # 文件上传
   servlet:
-    # 应用的访问路径
-    context-path: /
-  tomcat:
-    # tomcat的URI编码
-    uri-encoding: UTF-8
-    # tomcat最大线程数，默认为200
-    max-threads: 800
-    # Tomcat启动初始化的线程数，默认值25
-    min-spare-threads: 30
+    multipart:
+      # 单个文件大小
+      max-file-size: 10MB
+      # 设置总上传的文件大小
+      max-request-size: 20MB
+
+# PageHelper分页插件
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
 
 # 日志配置
 logging:
@@ -39,63 +39,6 @@ user:
   password:
     # 密码错误{maxRetryCount}次锁定10分钟
     maxRetryCount: 5
-
-# Spring配置
-spring:
-  # 模板引擎
-  thymeleaf:
-    mode: HTML
-    encoding: utf-8
-    # 禁用缓存
-    cache: false
-  # 资源信息
-  messages:
-    # 国际化资源文件路径
-    basename: static/i18n/messages
-  jackson:
-    time-zone: GMT+8
-    date-format: yyyy-MM-dd HH:mm:ss
-  profiles:
-    active: dev
-  # 文件上传
-  servlet:
-    multipart:
-      # 单个文件大小
-      max-file-size: 10MB
-      # 设置总上传的文件大小
-      max-request-size: 20MB
-  # 服务模块
-  devtools:
-    restart:
-      # 热部署开关
-      enabled: true
-
-mybatis-plus:
-  mapper-locations: classpath*:mapper/**/*Mapper.xml
-  #实体扫描，多个package用逗号或者分号分隔
-  typeAliasesPackage: com.fun
-  configuration:
-    map-underscore-to-camel-case: true
-    cache-enabled: false
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-  global-config:
-    banner: false
-    db-config:
-      id-type: auto
-      #逻辑删除配置（下面3个配置）
-      logic-delete-value: 1
-      logic-not-delete-value: 0
-      #下划线转驼峰,只对表名生效
-      table-underline: true
-      select-strategy: not_empty
-
-
-# PageHelper分页插件
-pagehelper:
-  helperDialect: mysql
-  reasonable: true
-  supportMethodsArguments: true
-  params: count=countSql
 
 # Shiro
 shiro:
@@ -146,3 +89,30 @@ xss:
 swagger:
   # 是否开启swagger
   enabled: true
+
+oss:
+  bucket: jhtcfl
+  endpoint: oss-cn-beijing.aliyuncs.com
+  accessKey: LTAI4G49efKVhJELCEchaAyX
+  secretKey: V7Ea4cNIhARdvfOeiJxIwpbguUMSJp
+  host: https://${oss.bucket}.${oss.endpoint}
+
+article:
+  h5: https://m.qufaw.com/#/pages/index/lawList/lawList
+  pc: https://www.qufaw.com/law_details
+
+
+# 项目相关配置
+fun:
+  # 名称
+  name: jhtc
+  # 版本
+  version: 1.0.0
+  # 版权年份
+  copyrightYear: 2020
+  # 实例演示开关
+  demoEnabled: false
+  # 文件路径 示例（ Windows配置D:/fun/uploadPath，Linux配置 /home/uploadPath）
+  profile: /home/uploadPath
+  # 获取ip地址开关
+  addressEnabled: true
