@@ -1,3 +1,4 @@
+#============= 生产环境使用缓存 ============= #
 server:
   servlet:
     context-path: /
@@ -5,6 +6,7 @@ server:
     uri-encoding: UTF-8
     max-threads: 800
     min-spare-threads: 30
+# HTTPS SSL配置
 #  ssl:
 #    key-store: classpath:4730909_api.xxx.com.pfx
 #    key-store-password: 0K2NzYP3

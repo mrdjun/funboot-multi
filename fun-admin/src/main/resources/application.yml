@@ -104,3 +104,11 @@ fun:
   profile: /home/uploadPath
   # 获取ip地址开关
   addressEnabled: true
+
+# 阿里云OSS
+#oss:
+#  bucket: xxx
+#  endpoint: oss-cn-beijing.aliyuncs.com
+#  accessKey: xxx
+#  secretKey: xxx
+#  host: https://${oss.bucket}.${oss.endpoint}

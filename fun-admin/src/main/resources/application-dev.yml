@@ -1,4 +1,4 @@
-# 开发环境配置
+#============= 开发环境禁用缓存 ============= #
 server:
   servlet:
     # 应用的访问路径
@@ -21,7 +21,6 @@ spring:
   thymeleaf:
     mode: HTML
     encoding: utf-8
-    # 开发环境禁用缓存
     cache: false
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
